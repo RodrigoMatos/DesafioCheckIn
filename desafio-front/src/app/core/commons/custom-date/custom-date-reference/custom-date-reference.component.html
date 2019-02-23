@@ -1,0 +1,14 @@
+<mat-form-field style="width: 100%;" class="app-custom-date">
+  <input #inputDate matInput [matDatepicker]="dp" [(ngModel)]="entity[entityField]" (keydown)="onKeyDown($event)" (blur)="onBlur($event)" [readonly]="getDisabled()" [formControl]="formGroupCustom.controls.input"
+  placeholder="{{placeholder}}" id="{{id}}" autocomplete="{{autoComplete ? 'on' : 'off'}}">
+  <img class="image-calendar-custom" src="./assets/images/data.svg" alt="" *ngIf="!getDisabled()">
+  <mat-datepicker-toggle class="app-custom-date-icon" matSuffix [for]="dp" *ngIf="!getDisabled()">
+  </mat-datepicker-toggle>
+  <mat-datepicker #dp startView="multi-year" (yearSelected)="onSelectYear($event)" (monthSelected)="onSelectMonth($event, dp)"
+    [disabled]="getDisabled()">
+  </mat-datepicker>
+  <button class="mat-icon-button clear-custom-date" disableRipple (click)=clear() *ngIf="showClearButton() && !getDisabled()">
+    <mat-icon>clear</mat-icon>
+  </button>
+  <ng-content></ng-content>
+</mat-form-field>

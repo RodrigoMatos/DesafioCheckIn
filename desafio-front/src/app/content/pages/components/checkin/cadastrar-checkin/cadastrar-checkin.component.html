@@ -1,0 +1,63 @@
+<form id="checkin-cadastro-element" [formGroup]="formGroupGeral">
+
+  <app-menu-cabecalho titulo="Cadastrar CheckIn">
+    <div class="row justify-content-end">
+      <div class="p-1 col-6 col-md-4 col-lg-3">
+        <button id="btnSalvar" class="btnSalvar button-search-fields full-width azul-back" mat-raised-button
+          color="primary" (click)="salvar();">
+          Salvar</button>
+      </div>
+      <div class="col-4">
+        <button id="voltar" mat-raised-button color="primary" routerLink="/checkin"
+          class="voltar button-search-fields full-width azul-back">
+          Voltar
+        </button>
+      </div>
+    </div>
+  </app-menu-cabecalho>
+
+  <div id="divCheckInCadastro">
+    <div class="container-fluid">
+      <div class="body-component">
+        <div class="row mx-auto">
+
+          <div class="col-6">
+            <app-custom-date id="dataInicio" [entity]="checkIn" entityField="dataInicio" placeholder="Data Inicio">
+            </app-custom-date>
+          </div>
+
+          <div class="col-6">
+            <app-custom-date id="dataFim" [entity]="checkIn" entityField="dataFim" placeholder="Data Fim">
+            </app-custom-date>
+          </div>
+
+          <div class="col-6">
+            <mat-form-field class="hospede full-width">
+              <mat-select id="hospede" [(ngModel)]=checkIn.hospede placeholder="Hospede" formControlName="hospede"
+                [compareWith]="compareById">
+                <mat-option>Selecione</mat-option>
+                <mat-option *ngFor="let hospede of listHospedes" [value]="hospede">
+                  {{hospede.nome}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 col-md-2">
+            <label class="label-custom">Possui veículo</label>
+            <br>
+            <mat-radio-group id="adicinalVeiculo" class="mat-radio-group-custom" formControlName="adicinalVeiculo"
+              [(ngModel)]="checkIn.adicinalVeiculo">
+              <mat-radio-button [value]="true">Sim</mat-radio-button>
+              <mat-radio-button [value]="false">Não</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+<ng2-toasty></ng2-toasty>

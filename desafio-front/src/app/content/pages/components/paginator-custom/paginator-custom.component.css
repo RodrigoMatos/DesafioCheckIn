@@ -1,0 +1,54 @@
+.padding-top-bottom {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.table-custom-paginator {
+    width: 100%;
+    display: block;
+    background: transparent !important;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+    color: rgba(0,0,0,.54);
+    box-shadow: 0px -1px 0px 0px rgba(0,0,0,.12) !important;
+}
+
+.table-custom-paginator > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 56px;
+    padding: 0 8px;
+    flex-wrap: wrap-reverse;
+    box-sizing: border-box;
+}
+
+.table-custom-paginator > div > div:first-child {
+    width: 205px;
+    display: flex;
+    align-items: baseline;
+    margin-right: 8px;
+    box-sizing: border-box;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 12px;
+}
+
+.table-custom-paginator > div > div:last-child {
+    display: flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 12px;
+}
+
+.table-custom-paginator > div > div:last-child > div {
+    margin: 0 32px 0 24px;
+    box-sizing: border-box;
+    display: block;
+}
+
+::ng-deep .mat-tooltip  {
+    min-width: 88px !important;
+    text-align: center;
+}

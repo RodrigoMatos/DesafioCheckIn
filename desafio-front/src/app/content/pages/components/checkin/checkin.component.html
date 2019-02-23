@@ -1,0 +1,101 @@
+<div id="divHospedePesquisa">
+
+  <app-menu-cabecalho titulo="Pesquisar CheckIn">
+    <div class="row justify-content-end">
+      <div class="col-4">
+        <button id="btnIrParaCadastrarCheckIn" mat-raised-button color="primary" routerLink="/checkin/cadastrar"
+          class="btnIrParaCadastrarCheckIn button-search-fields full-width azul-back">
+          Novo Check-In
+        </button>
+      </div>
+    </div>
+  </app-menu-cabecalho>
+
+  <div class="container-fluid">
+
+    <div class="body-component">
+      <div class="row justify-content-center">
+
+        <div class="col-3 col-md-3">
+          <mat-form-field class="full-width">
+            <input id="nome" class="nome" type="text" matInput [(ngModel)]=filter.nome placeholder="Nome"
+              maxlength="50">
+          </mat-form-field>
+        </div>
+
+        <div class="col-3 col-md-3">
+          <mat-form-field class="full-width">
+            <input id="documento" class="documento" type="text" matInput [(ngModel)]=filter.documento
+              placeholder="Documento" maxlength="15">
+          </mat-form-field>
+        </div>
+
+        <div class="col-3 col-md-3">
+          <mat-form-field class="full-width">
+            <input id="telefone" class="telefone" type="text" matInput [(ngModel)]=filter.telefone
+              placeholder="Telefone" mask='{{maskPhone}}' (keydown)="onKeydownPhone($event)">
+          </mat-form-field>
+        </div>
+
+      </div>
+
+      <div class="row justify-content-center align-self-center divBtnAcoes">
+        <div class="col-2">
+          <button id="btnLimpar" mat-raised-button color="primary" (click)="limpar();"
+            class="button-clean-fields full-width ">Limpar</button>
+        </div>
+        <div class="col-2">
+          <button id="btnPesquisar" mat-raised-button color="primary" (click)="pesquisar();"
+            class="full-width button-search-fields btnPesquisar azul-back">Pesquisar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="clean"></div>
+
+    <div id="result-consulta" class="row result-consulta padding-body">
+
+      <div id="info-result" class="col-12 info-result" *ngIf="pesquisou">
+        <div *ngIf="!temRegistro" id="info-nao-tem-resultado" class="info-nao-tem-resultado">
+          <label class="label-size">Não há registros para serem exibidas</label>
+        </div>
+
+        <div *ngIf="temRegistro" class="info-tem-resultado" id="info-tem-resultado">
+          <label class="label-size">Sua busca encontrou
+            <span id="qtdResultadoConsulta" class="qtdResultadoConsulta">{{ dataTableCustom.length }}</span>
+            resultado(s)
+          </label>
+        </div>
+      </div>
+
+      <div *ngIf="pesquisou && temRegistro" class="col-12">
+        <table id="gridResultado" mat-table [dataSource]="dataTableCustom.listObject" style="width: 100%">
+          <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef style="width: 40%;">NOME</th>
+            <td mat-cell *matCellDef="let element">{{ element.hospede.nome }}</td>
+          </ng-container>
+          <ng-container matColumnDef="documento">
+            <th mat-header-cell *matHeaderCellDef style="width: 20%;">DOCUMENTO</th>
+            <td mat-cell *matCellDef="let element"> {{ element.hospede.documento }} </td>
+          </ng-container>
+          <ng-container matColumnDef="telefone">
+            <th mat-header-cell *matHeaderCellDef style="width: 20%;">TELEFONE</th>
+            <td mat-cell *matCellDef="let element">{{ element.hospede.telefone | telefoneCustom }}</td>
+          </ng-container>
+          <ng-container matColumnDef="valor">
+            <th mat-header-cell *matHeaderCellDef style="width: 20%;">VALOR (R$)</th>
+            <td mat-cell *matCellDef="let element">
+              {{ (element.valor ? element.valor : 0) | currency:'BRL':true}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator id="gridResultadoPesquisaPaginator" class="paginator-custom" [length]="dataTableCustom.length"
+          [pageSize]="dataTableCustom.pageSize" [pageSizeOptions]="getPageSizeOptions(dataTableCustom.length)"
+          (page)="pageEvent = getServerData($event)">
+        </mat-paginator>
+      </div>
+    </div>
+
+  </div>
+  <ng2-toasty></ng2-toasty>

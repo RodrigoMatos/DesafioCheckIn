@@ -1,0 +1,38 @@
+<ng-content></ng-content>
+<div id="tableCustomPaginator" *ngIf="pageDataTable.length > 5" class="table-custom-paginator">
+  <div id="tableCustomPaginatorContent">
+    <!-- <div id="tableCustomPaginatorInfo">Registros por Página
+      <div *ngIf='pageDataTable.length <= 5' style="padding-left: 5px;">
+        {{ pageDataTable.pageSize }}
+      </div>
+      <div *ngIf='pageDataTable.length > 5' style="width: 35%; margin-left: 15px; margin-top: 8px; height: 30px;">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-select [(ngModel)]=pageFilter.pageSize (selectionChange)="changeSizePage()">
+            <mat-option *ngFor="let page of getPages()" [value]="page">
+              {{ page }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div> -->
+    <div id="tableCustomPaginatorNavigator">
+      <div id="tableCustomPaginatorNavigatorIndex">{{ getIndexTableFormatted() }}</div>
+      <button id="tableCustomPaginatorNavigatorBack" class="mat-paginator-navigation-previous mat-icon-button"
+        mat-icon-button="" [disabled]="!isBotaoEsquerdaAtivo()" (click)=backPage() [matTooltip]="tooltipAnterior"
+        matTooltipClass="tooltip-custom">
+        <span class="mat-button-wrapper">
+          <img src="../../../../../assets/images/esquerda_inativo.svg" *ngIf="!isBotaoEsquerdaAtivo()" />
+          <img src="../../../../../assets/images/esquerda_ativo.svg" *ngIf="isBotaoEsquerdaAtivo()" />
+        </span>
+      </button>
+      <button id="tableCustomPaginatorNavigatorNext" class="mat-paginator-navigation-previous mat-icon-button"
+        mat-icon-button="" [disabled]="!isBotaoDireitaAtivo()" (click)=nextPage() [matTooltip]="tooltipProximo"
+        matTooltipClass="tooltip-custom">
+        <span class="mat-button-wrapper">
+          <img src="../../../../../assets/images/direita_inativo.svg" *ngIf="!isBotaoDireitaAtivo()" />
+          <img src="../../../../../assets/images/direita_ativo.svg" *ngIf="isBotaoDireitaAtivo()" />
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

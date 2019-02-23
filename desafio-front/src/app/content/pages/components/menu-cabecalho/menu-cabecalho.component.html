@@ -1,0 +1,32 @@
+<div id="menu-content" class="menu-content">
+  <div class="container-fluid height-100">
+    <div class="row height-100 align-items-center">
+
+      <div class="col-1 menu-menu">
+        <button id="btnCallMenu" class="btnCallMenu icon-menu" mat-icon-button [matMenuTriggerFor]="appMenu" (click)="$event.preventDefault();">
+          <mat-icon svgIcon="menu_custom"></mat-icon>
+        </button>
+        <mat-menu id="appMenu" class="appMenu" #appMenu="matMenu">
+          <button id="{{menu.id}}" class="mat-menu-item {{menu.id}}" mat-menu-item *ngFor="let menu of listMenu; let i = index"
+            (click)='navegarPara(menu.url);'>
+            {{ menu.titulo }} </button>
+        </mat-menu>
+      </div>
+
+      <div class="col-6 menu-title">
+        <!-- <div class="div-back">
+          <button *ngIf=showBack id="btnMenuBack" class="btnMenuBack" mat-icon-button (click)="$event.preventDefault();back()">
+            <mat-icon svgIcon="voltar_custom"></mat-icon>
+          </button>
+        </div> -->
+        <div class="div-titulo">
+          <span id="titulo-page" class="cinza-titulo">{{titulo}}</span>
+        </div>
+      </div>
+
+      <div class="col-4 col-md-5 menu-acoes">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

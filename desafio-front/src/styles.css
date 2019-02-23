@@ -1,0 +1,445 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~ng2-toasty/bundles/style-bootstrap.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+html {
+    height: 100%;
+    background-color: rgb(232, 235, 239, 0.45) !important;
+}
+
+/* Style Only IE 10 and 11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    html {
+        background-color: rgb(232, 235, 239) !important;
+    }
+}
+
+/* Style Only IE EDGE 12 */
+@supports (-ms-accelerator:true) {
+    html {
+        background-color: rgb(232, 235, 239) !important;
+    }
+}
+
+body, .content-app-component {
+    height: 100%;
+    background-color: transparent !important;
+}
+
+.jumbotron {
+    background-color: transparent !important;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.content-buttom-clean {
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.font-color-white {
+    color: white !important;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.center {
+    text-align: center !important;
+}
+
+.left {
+    text-align: left !important;
+}
+
+.right {
+    text-align: right !important;
+}
+
+.label {
+    font-size: 14px;
+    color: gray;
+    margin-right: 20px;
+}
+
+.label-size {
+    font-size: 12px;
+    color: #808080;
+    margin-bottom: 0px !important;
+    padding-bottom: 10px;
+}
+
+.clean {
+    margin-bottom: 20px;
+}
+
+.app-custom-date .app-custom-date-icon {
+    left: -30px !important;
+    position: relative;
+}
+
+.clear-custom-date {
+    position: absolute !important;
+    padding: 0px !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-color: transparent !important;
+    background-color: transparent !important;
+    right: 25px !important;
+    top: 2px !important;
+}
+
+.clear-custom-date > mat-icon {
+    font-size: 19px !important;  
+    color: #3fa8e7;
+}
+
+.app-custom-date .mat-form-field-infix{
+    min-width: 100% !important;
+}
+
+.app-custom-date .mat-form-field-infix > input {
+    padding-left: 10px;
+    padding-right: 42px;
+}
+
+.app-custom-date:hover .clear-custom-date {
+    display: block !important;
+}
+
+app-custom-date-reference[ng-reflect-disabled=true],  app-custom-date[ng-reflect-disabled=true]{
+    color: #a3a3a3;
+}
+
+.clear-custom-date {
+    display: none !important;
+}
+
+.tooltip-custom {
+    text-align: center;
+    border-radius: 50px !important;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    color: #464646 !important;
+    background-color: white !important;
+    word-break: break-all;
+}
+
+.button-clean-fields {
+    background-color: transparent !important;
+    color: #1da7e7 !important;
+    border: 1px solid #1da7e7 !important;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+}
+
+.button-clean-fields:focus {
+    color: #1da7e7 !important;
+    border: 1px solid #1da7e7 !important;
+}
+
+.button-search-fields {
+    border: 1px solid #1da7e7 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    min-width: 10% !important;
+    border-radius: 6px !important;
+}
+
+.cancelar-custom {
+    border-color: red !important;
+    color: red !important;
+}
+
+app-accordion-paginator .mat-form-field-outline-start, .mat-form-field-outline-gap, .mat-form-field-outline-end {
+    border: none !important;
+}
+
+app-accordion-paginator .mat-form-field-infix {
+    padding: .4375em 0 !important;
+}
+
+app-accordion-paginator .mat-form-field-flex {
+    width: 100% !important;
+    padding: 0px !important;
+}
+
+app-accordion-paginator .mat-select-arrow-wrapper {
+    vertical-align: bottom !important;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #1da7e7 !important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #1da7e7 !important;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #1da7e7 !important;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #1da7e7;
+}
+
+.mat-button-toggle-checked {
+    background-color: transparent
+}
+
+.btnActionsGrid {
+    box-shadow: none !important;
+}
+
+.row-title {
+    margin-bottom: 30px;
+}
+
+.field-ativo{
+    padding-top: 20px;
+}
+
+.divBtnAcoes {
+    margin-top: 30px;
+}
+
+.body-component {
+    background-color: white;
+    padding: 15px 0 15px 0px;
+    border-radius: 20px;
+}
+
+.body-content-filter{
+    margin: 15px 0 15px 0px;
+}
+
+.padding-body {
+    padding: 15px 0 15px 0px;
+}
+
+.appMenu {
+    background-color: #3a92ff !important;
+    min-width: 160px !important;
+}
+
+.appMenu .mat-menu-item {
+    color: white !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #1da7e7 !important;
+}
+
+.mat-radio-group-custom  mat-radio-button {
+    margin-right: 20px;
+}
+
+.mat-focused .mat-form-field-label{ 
+    color: #1da7e7 !important;
+} 
+
+.mat-focused .mat-form-field-underline .mat-form-field-ripple { 
+    background: #1da7e7 !important;
+}
+
+.mat-input-element {
+    caret-color:  #1da7e7 !important;
+}
+
+.label-custom {
+    width: 100%;
+    top: 20px;
+    position: relative;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    color: #808080;
+    transform: translateY(-1.28125em) scale(.75) perspective(100px) translateZ(.001px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transform-origin: 0 0;
+    font: inherit;
+    pointer-events: none;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 1.125;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.icon-novo > span > mat-icon, .icon-menu > span > mat-icon{
+    width: 40px;
+    height: 40px;
+}
+
+.search-icon {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.edit-icon {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.azul {
+    color: #1da7e7ff;
+}
+
+.azul-back {
+    background-color: #1da7e7 !important;
+}
+
+.cinza-titulo {
+    color: #808080ff;
+}
+
+.cinza-resposta {
+    color: #333333ff;
+}
+
+.cinza-linha {
+    color: #b3b3b3ff;
+}
+
+.branco {
+    color: #ecececff;
+}
+
+.branco-back {
+    background-color: #ecececff;
+}
+
+.vermelho {
+    color: #ff5555ff;
+}
+
+.mat-table td {
+    padding-right: 20px !important;
+}
+
+.cdk-focused, .cdk-mouse-focused {
+    outline: none !important;
+    border: 0px solid #1da7e7 !important;
+}
+
+mat-form-field.obrigatorio span > label:after {
+    content: '*';
+    padding-left: 2px;
+}
+
+label.obrigatorio:after {
+    content: '*';
+    padding-left: 2px;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: rgba(0,0,0,.54) !important;
+}
+
+.mat-radio-checked.mat-radio-disabled .mat-radio-outer-circle {
+    border-color: #a9a9a9 !important;
+}
+.mat-radio-checked.mat-radio-disabled .mat-radio-inner-circle {
+    background-color: #a9a9a9 !important;
+}
+
+.mat-datepicker-toggle .mat-icon-button {
+    border-radius: 0px;
+    top: 7px;
+}
+
+.mat-datepicker-toggle .mat-button-wrapper svg {
+    display: none;
+}
+
+.image-calendar-custom {
+    float: right;
+    position: absolute;
+    height: 20px;
+    right: 7px;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #1da7e7;
+}
+
+/* BARRA DE ROLAGEM https://pt.stackoverflow.com/questions/68928/como-estilizar-a-barra-de-rolagem */
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #a3a3a3;
+    border-radius: 15px;
+}
+
+.mat-chip-custom .mat-form-field-underline {
+    display: none !important;
+}
+
+.mat-chip-list-wrapper .mat-standard-chip{
+    margin-top: 4px !important;
+    margin-right: 25px !important;
+}
+
+.mat-select-arrow {
+    width: 14px !important;
+    height: 8px !important;
+    border-left: 0px !important; 
+    border-right: 0px !important; 
+    border-top: 0px !important; 
+    margin: 0 10px !important;
+    background-image: url('./assets/images/setinha_baixo.svg');
+    background-repeat: no-repeat;
+    background-size: 14px;
+    position: relative;
+    
+}
+
+.mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline {
+    background-color: rgba(0,0,0,.42) !important;
+    background-image: none !important;
+}
+
+.margin-sides-clean {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+table.custom-table {
+    border-collapse: collapse;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    overflow: hidden;
+}
+
+.custom-table tr.mat-header-row {
+    background-color: #ccccccff;
+}
+
+.custom-table th.mat-header-cell {
+    color: #1a1a1aff;
+}
+
+.custom-table .mat-row:nth-child(even) {
+    background-color:#ffffffff;
+}
+
+.custom-table .mat-row:nth-child(odd) {
+    background-color:#f2f2f2ff;
+}
+
+.error-date-custom {
+    position: absolute;
+    margin-top: 10px;
+    font-size: 75%;
+}

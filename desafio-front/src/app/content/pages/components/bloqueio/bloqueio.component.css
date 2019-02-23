@@ -1,0 +1,102 @@
+.app-bloqueio {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 0.70;
+    position: absolute;
+    background: #666666;
+    display: inline-block;
+  }
+  
+  .app-bloqueio-recipiente {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    margin: -34px 0 0 -34px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #7ececd;
+    -webkit-animation: bloqueio-efeito 2s linear infinite;
+    animation: bloqueio-efeito 2s linear infinite;
+    z-index: 1001;
+  }
+  
+  .app-bloqueio-recipiente:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #e74c3c;
+    -webkit-animation: bloqueio-efeito 3s linear infinite;
+    animation: bloqueio-efeito 3s linear infinite;
+  }
+  
+  .app-bloqueio-recipiente:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f9c922;
+    -webkit-animation: bloqueio-efeito 1.5s linear infinite;
+    animation: bloqueio-efeito 1.5s linear infinite;
+  }
+  
+  div.app-bloqueio > .app-carregando {
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1000;
+    position: absolute;
+    background: #eceff1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
+  
+  div.app-bloqueio > .app-carregando-esquerdo {
+    left: 0;
+  }
+  
+  div.app-bloqueio > .app-carregando-direito {
+    right: 0;
+  }
+  
+  @-webkit-keyframes bloqueio-efeito {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes bloqueio-efeito {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+  }
+  

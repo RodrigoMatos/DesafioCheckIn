@@ -1,0 +1,73 @@
+<form id="hospede-cadastro-element" [formGroup]="formGroupGeral">
+
+  <app-menu-cabecalho titulo="Cadastro de Hospede">
+    <div class="row justify-content-end">
+      <div class="p-1 col-6 col-md-4 col-lg-3" *ngIf=!disabled>
+        <button id="btnSalvar" class="btnSalvar button-search-fields full-width azul-back" mat-raised-button
+          color="primary" (click)="salvar();">
+          Salvar</button>
+      </div>
+      <div class="col-4">
+        <button id="voltar" mat-raised-button color="primary" routerLink="/hospede"
+          class="voltar button-search-fields full-width azul-back">
+          Voltar
+        </button>
+      </div>
+    </div>
+  </app-menu-cabecalho>
+
+  <div id="divCadastro">
+
+    <div class="container-fluid">
+
+      <div class="body-component">
+
+        <div class="row mx-auto">
+          <div class="col-12 col-md-4">
+            <mat-form-field class="full-width obrigatorio">
+              <input id="nome" class="nome" type="text" formControlName="nome" matInput [(ngModel)]=hospede.nome
+                placeholder="Nome" maxlength="50">
+              <mat-error *ngIf="formGroupGeral.controls.nome.hasError('required')">
+                <label id="msgObrigatorioNome" class="msgObrigatorioNome">
+                  Nome é <strong>obrigatório</strong>
+                </label>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <mat-form-field class="full-width obrigatorio">
+              <input id="documento" class="documento" type="text" formControlName="documento" matInput
+                [(ngModel)]=hospede.documento placeholder="Documento" maxlength="15">
+              <mat-error *ngIf="formGroupGeral.controls.documento.hasError('required')">
+                <label id="msgObrigatorioDocumento" class="msgObrigatorioDocumento">
+                  Documento é <strong>obrigatório</strong>
+                </label>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 col-md-2">
+              <mat-form-field class="full-width obrigatorio">
+                <input id="telefone" class="telefone" type="text" formControlName="telefone" matInput [(ngModel)]=hospede.telefone
+                  placeholder="Telefone" mask='{{maskPhone}}' (keydown)="onKeydownPhone($event)">
+                <mat-error *ngIf="formGroupGeral.controls.telefone.hasError('required')">
+                  <label id="msgObrigatorioTelefone" class="msgObrigatorioTelefone">
+                    Telefone é <strong>obrigatório</strong>
+                  </label>
+                </mat-error>
+                <mat-error *ngIf="formGroupGeral.controls.telefone.hasError('minlength')">
+                  <label id="msgMinLengthTelefone" class="msgMinLengthTelefone">
+                    Telefone deve possuir no mínimo <strong>10</strong> dígitos
+                  </label>
+                </mat-error>
+              </mat-form-field>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+<ng2-toasty></ng2-toasty>

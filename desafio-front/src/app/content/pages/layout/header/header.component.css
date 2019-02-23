@@ -1,0 +1,15 @@
+.header-component {
+    height: 60px;
+    border-bottom: solid 2px #0000001f;
+    background-color: #008068;
+}
+
+.container-fluid, .container-fluid > div {
+    height: 100%;
+}
+
+@media (max-width: 767px) {
+    .header-component {
+        height: 85px;
+    }    
+}
